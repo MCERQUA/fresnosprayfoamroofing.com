@@ -81,10 +81,11 @@ FOOTER = """<!-- CTA band -->
 <div>
 <h5 class="font-headline-lg text-on-primary text-xl uppercase mb-6">Service Areas</h5>
 <ul class="space-y-3 font-body-md text-on-primary-container text-sm">
-<li>Fresno &amp; Clovis</li>
-<li>Madera &amp; Merced</li>
-<li>Visalia &amp; Tulare</li>
-<li>Bakersfield</li>
+<li><a class="hover:text-secondary transition-colors" href="/commercial-roofing-fresno.html">Fresno &amp; Clovis</a></li>
+<li><a class="hover:text-secondary transition-colors" href="/spray-foam-roofing-visalia.html">Visalia</a></li>
+<li><a class="hover:text-secondary transition-colors" href="/spray-foam-roofing-tulare.html">Tulare &amp; Hanford</a></li>
+<li><a class="hover:text-secondary transition-colors" href="/spray-foam-roofing-merced.html">Merced &amp; Madera</a></li>
+<li><a class="hover:text-secondary transition-colors" href="/spray-foam-roofing-bakersfield.html">Bakersfield</a></li>
 </ul>
 </div>
 <div>
@@ -283,6 +284,203 @@ dict(slug="commercial-roofing-fresno", hero_img="truck.jpg",
 </table>
 <h2>Serving Fresno and the Entire Central Valley</h2>
 <p>Based in the Valley for over 20 years, we serve Fresno, Clovis, Madera, Visalia, Tulare, Hanford, Merced, and Bakersfield. Family-owned, SPFA member, BBB accredited, fully licensed (Lic #C-2-1052735) — and every assessment starts free, with a drone survey and a written bid within 48 hours.</p>
+"""),
+
+# ---------- PHASE 2: city money pages ----------
+dict(slug="spray-foam-roofing-visalia", hero_img="hero-aerial.jpg",
+ title="Spray Foam Roofing Visalia, CA | Commercial Roofing & Coatings | Allstate",
+ meta_desc="Commercial spray foam roofing & silicone coatings in Visalia, CA — Allstate's home turf. Seamless SPF roofs for ag processing, warehouses & metal buildings in Tulare County. Free assessment: (559) 739-9519.",
+ schema_name="Spray Foam Roofing Visalia",
+ h1='Spray Foam Roofing in <span class="text-secondary">Visalia</span>, CA',
+ subhead="Visalia is our home turf — Allstate has been spraying foam in Tulare County for over 20 years. Commercial roofs here get our A-team, minutes from the shop.",
+ body="""
+<h2>Visalia's Hometown Spray Foam Roofing Crew</h2>
+<p>Allstate Spray Foam started in Visalia, and after 20+ years we've foamed and coated roofs across every industrial corridor in the city — from the Visalia Industrial Park to the packing houses and cold-storage facilities that keep Tulare County's ag economy moving. When your roof is minutes from our shop, you get faster mobilization, faster punch-list turnaround, and a crew that will drive past your building for years after the job is done. We stand behind every roof, because we literally can't avoid seeing them.</p>
+<h2>What Visalia Buildings Need From a Roof</h2>
+<ul>
+<li><strong>Ag processing &amp; packing facilities</strong> — washdown humidity inside, 100°+ heat outside. Closed-cell SPF handles both, sealing the roof deck and insulating in one pass.</li>
+<li><strong>Cold storage</strong> — every degree matters. SPF's ~R-6.5 per inch is the highest of any roof system, cutting refrigeration loads measurably.</li>
+<li><strong>Metal buildings</strong> — Tulare County's workhorse structures. Foam seals the seams and fastener heads that make metal roofs leak, permanently.</li>
+<li><strong>Retail &amp; office</strong> — quiet, clean application with the building open for business below.</li>
+</ul>
+<h2>Repair and Restoration in Visalia</h2>
+<p>Already have a foam roof? Many Visalia buildings do — some of them ours from decades back. A <a class="text-secondary underline" href="/foam-roof-repair-fresno.html">repair or recoat</a> renews the system for a fraction of replacement cost. If you have an aging TPO, metal, or built-up roof, a <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">silicone-coated SPF overlay</a> installs right over it — no tear-off.</p>
+<h2>Serving All of Tulare County</h2>
+<p>From Visalia we cover Tulare, Exeter, Farmersville, Goshen, and everything in between. See our <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">cost guide</a> for what to expect, then get your free assessment — drone survey, core samples, written bid within 48 hours.</p>
+"""),
+
+dict(slug="spray-foam-roofing-tulare", hero_img="service-spf-roof.jpg",
+ title="Spray Foam Roofing Tulare & Hanford, CA | Dairy & Ag Facility Roofing | Allstate",
+ meta_desc="Commercial spray foam roofing for Tulare & Hanford, CA — dairy processing, ag facilities, and warehouses. Seamless SPF + silicone coating systems from Allstate. Free assessment: (559) 739-9519.",
+ schema_name="Spray Foam Roofing Tulare and Hanford",
+ h1='Spray Foam Roofing in <span class="text-secondary">Tulare &amp; Hanford</span>',
+ subhead="Home of the World Ag Expo and some of the hardest-working roofs in California. We keep dairy, processing, and distribution buildings sealed and cool.",
+ body="""
+<h2>Roofing for Dairy Country</h2>
+<p>Tulare and Hanford sit at the center of the most productive dairy region in America — and dairy processing is brutal on buildings. Interior humidity, washdown cycles, corrosive environments, and relentless Valley sun mean ordinary roofs fail early and often. Spray polyurethane foam was practically made for these conditions: a seamless, fully-adhered envelope with zero fastener penetrations, topped with a silicone coating that shrugs off UV and ponding water alike.</p>
+<h2>Who We Serve in Tulare &amp; Kings County</h2>
+<ul>
+<li><strong>Dairy &amp; food processing plants</strong> — seamless roofs with no seams to harbor leaks over production floors.</li>
+<li><strong>Cheese &amp; cold storage facilities</strong> — the highest R-value per inch available cuts refrigeration costs every single day.</li>
+<li><strong>Ag equipment dealers &amp; warehouses</strong> — big metal buildings sealed and insulated in one application.</li>
+<li><strong>Distribution &amp; trucking terminals</strong> along Highway 99 — fast application that doesn't shut down operations.</li>
+</ul>
+<h2>The Economics Ag Operators Understand</h2>
+<p>Farm and processing margins are tight; roof budgets compete with equipment and feed. That's exactly why SPF wins here: it installs <strong>over your existing roof with no tear-off</strong>, cuts cooling loads immediately, and never needs replacing — just a <a class="text-secondary underline" href="/foam-roof-repair-fresno.html">recoat every 10–20 years</a>. Run the numbers in our <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">cost guide</a>.</p>
+<h2>Local, Licensed, and Nearby</h2>
+<p>We're based up the road in Tulare County — fully licensed (Lic #C-2-1052735), SPFA member, and on dairy-country roofs every week. Free assessments include a drone survey and written bid within 48 hours.</p>
+"""),
+
+dict(slug="spray-foam-roofing-hanford", hero_img="service-silicone.jpg",
+ title="Spray Foam Roofing Hanford, CA | Commercial SPF & Coatings | Allstate",
+ meta_desc="Commercial spray foam roofing & silicone roof coatings in Hanford, CA. Seamless SPF systems for Kings County ag processing, warehouses & metal buildings. Free assessment: (559) 739-9519.",
+ schema_name="Spray Foam Roofing Hanford",
+ h1='Spray Foam Roofing in <span class="text-secondary">Hanford</span>, CA',
+ subhead="Kings County's commercial and ag buildings run hot, dusty, and hard. We build roof systems that match.",
+ body="""
+<h2>Commercial Roofing Built for Kings County</h2>
+<p>Hanford's mix of ag processing, distribution, and civic buildings all share the same enemy: the Central Valley climate. Summer roof-surface temperatures well past 150°F cook conventional membranes, and wind-blown ag dust finds every seam and fastener. Spray polyurethane foam eliminates the seams entirely — one continuous, insulating, self-flashing surface over the whole roof — and the white silicone topcoat reflects the sun instead of absorbing it.</p>
+<h2>Common Hanford Projects</h2>
+<ul>
+<li><strong>Processing &amp; packing facilities</strong> — seamless protection over production areas, applied without shutting the line down.</li>
+<li><strong>Warehouses &amp; distribution</strong> — SPF over existing metal or built-up roofs, no tear-off, no landfill fees.</li>
+<li><strong>Municipal &amp; institutional buildings</strong> — schools, churches, and civic structures get decades of renewable service life.</li>
+<li><strong>Existing foam roofs</strong> — <a class="text-secondary underline" href="/foam-roof-repair-fresno.html">repair and recoat</a> to restart the clock instead of replacing.</li>
+</ul>
+<h2>Why Owners Pick Foam Here</h2>
+<p>It's the last roof the building needs. Install once, then <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">recoat on a 10–20 year cycle</a> forever — while the ~R-6.5-per-inch insulation pays you back on every cooling bill. See <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">what it costs</a>, then book the free assessment: drone survey, core samples where needed, written bid in 48 hours.</p>
+"""),
+
+dict(slug="spray-foam-roofing-merced", hero_img="hero-aerial.jpg",
+ title="Spray Foam Roofing Merced & Madera, CA | Commercial SPF Systems | Allstate",
+ meta_desc="Commercial spray foam roofing in Merced & Madera, CA — seamless SPF roofs and silicone coatings for warehouses, ag facilities and growing North-Valley businesses. Free assessment: (559) 739-9519.",
+ schema_name="Spray Foam Roofing Merced and Madera",
+ h1='Spray Foam Roofing in <span class="text-secondary">Merced &amp; Madera</span>',
+ subhead="The north Valley is growing fast — and every new warehouse, plant, and campus building needs a roof that can take the heat.",
+ body="""
+<h2>Serving the Growing North Valley</h2>
+<p>Between UC Merced's expansion, Highway 99 logistics growth, and the ag processing backbone that never left, Merced and Madera counties are adding commercial square footage fast. Whether you're building new, buying an older facility, or nursing a roof that should have been replaced years ago, spray polyurethane foam gives you the shortest path to a sealed, insulated, energy-efficient building.</p>
+<h2>What We Do in Merced &amp; Madera</h2>
+<ul>
+<li><strong>New construction SPF roofs</strong> — seamless and self-flashing from day one, with insulation built in.</li>
+<li><strong>Re-roofing without tear-off</strong> — foam installs directly over most existing metal, built-up, and concrete roofs.</li>
+<li><strong>Silicone restoration</strong> — aging foam, metal, and single-ply roofs recoated for 10–20 more years of service.</li>
+<li><strong>Wine &amp; food processing facilities</strong> — Madera County's wineries and processors get temperature-stable, washdown-tolerant roof systems.</li>
+</ul>
+<h2>The Valley Heat Math</h2>
+<p>North Valley summers hit the same 100°+ stretches as Fresno. A dark conventional roof absorbs that heat straight into your cooling bill; a white silicone-coated foam roof reflects most of it while the foam blocks the rest at ~R-6.5 per inch — the highest of any roofing material. Our <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">cost guide</a> covers what that means in dollars, and the <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">SPF systems page</a> covers how it works.</p>
+<h2>Free Assessment, Real Numbers</h2>
+<p>Drone survey, physical inspection, core samples where warranted, written bid within 48 hours — free, anywhere in Merced and Madera counties. Fully licensed (Lic #C-2-1052735), SPFA member, 20+ years in the Valley.</p>
+"""),
+
+dict(slug="spray-foam-roofing-bakersfield", hero_img="materials-warehouse.jpg",
+ title="Spray Foam Roofing Bakersfield, CA | Commercial & Industrial SPF | Allstate",
+ meta_desc="Commercial spray foam roofing in Bakersfield, CA — industrial-grade SPF systems and silicone coatings for oil, logistics, and ag buildings in Kern County. Free assessment: (559) 739-9519.",
+ schema_name="Spray Foam Roofing Bakersfield",
+ h1='Spray Foam Roofing in <span class="text-secondary">Bakersfield</span>, CA',
+ subhead="Kern County's industrial buildings work as hard as any in California. We install roof systems rated for exactly that — and we stock material by the truckload.",
+ body="""
+<h2>Industrial-Grade Roofing for Kern County</h2>
+<p>Bakersfield is the southern anchor of our service area and one of the hardest environments we roof in: more 100°+ days than anywhere else in the Valley, oil-field dust, and enormous low-slope industrial footprints. Spray polyurethane foam is the system of choice for exactly these conditions — seamless across huge roof areas, fully adhered against wind, and topped with a reflective silicone coating that takes the Kern County sun so your cooling system doesn't have to.</p>
+<h2>Buildings We Roof in Bakersfield</h2>
+<ul>
+<li><strong>Oil &amp; energy support facilities</strong> — shops, yards, and offices that need durable, low-maintenance roofs.</li>
+<li><strong>Logistics &amp; distribution centers</strong> — the 99/58 corridor's big-box roofs, foamed and coated at industrial scale.</li>
+<li><strong>Ag processing &amp; packing houses</strong> — Kern's citrus, carrot, and almond operations keep product cool under SPF.</li>
+<li><strong>Metal buildings everywhere</strong> — sealed seams, stopped leaks, and insulation added in a single application.</li>
+</ul>
+<h2>Stocked, Staffed, and Ready</h2>
+<p>Big industrial roofs need a contractor with real material capacity and real crews — not a pickup truck and a rented rig. We warehouse spray foam and coating materials by the pallet, run modern high-output spray equipment, and have been doing this for 20+ years, fully licensed (Lic #C-2-1052735).</p>
+<h2>Start With the Free Assessment</h2>
+<p>Drone survey of the full roof area, core sampling where warranted, and a written bid within 48 hours — with <a class="text-secondary underline" href="/foam-roof-repair-fresno.html">repair/recoat</a> and <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">new SPF system</a> options priced side by side. See the <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">cost guide</a> for typical ranges before we talk.</p>
+"""),
+
+# ---------- PHASE 2: supporting articles ----------
+dict(slug="how-long-does-spray-foam-roofing-last", hero_img="foam-macro.jpg",
+ title="How Long Does a Spray Foam Roof Last? | Allstate Spray Foam Roofing",
+ meta_desc="How long does spray foam roofing last? With scheduled recoats, SPF roofs deliver 40-50+ years of service. Here's the real lifespan data, the recoat cycle, and what kills foam roofs early.",
+ schema_name="Spray Foam Roof Lifespan Guide",
+ h1='How Long Does a Spray Foam Roof <span class="text-secondary">Last</span>?',
+ subhead="The honest answer: longer than the building's ownership, if you maintain the coating. Here's how the lifespan actually works.",
+ body="""
+<h2>The Short Answer: Decades — and Renewable</h2>
+<p>A properly installed spray polyurethane foam roof, protected by a maintained elastomeric coating, routinely delivers <strong>40–50+ years of service</strong>. Industry studies that tracked SPF roofs installed in the 1970s and 80s found the foam performing essentially like new decades later — because the foam itself doesn't wear out. What wears is the <em>coating</em>, and coatings are renewable.</p>
+<h2>How the Lifespan Cycle Works</h2>
+<table>
+<tr><th>Years</th><th>What Happens</th></tr>
+<tr><td>0</td><td>SPF applied, silicone coating installed over it</td></tr>
+<tr><td>1–15</td><td>Coating takes all UV and weather; foam stays protected. Annual visual checks recommended</td></tr>
+<tr><td>10–20</td><td>Coating reaches end of its wear window → clean and recoat. No tear-off, typically $2–$4/sq ft</td></tr>
+<tr><td>Repeat</td><td>Every recoat restarts the clock. The foam underneath keeps performing indefinitely</td></tr>
+</table>
+<p>Compare that with single-ply membranes (TPO/PVC), which typically deliver 15–25 years and then require a full tear-off and replacement — twice the roof spend in the same 40-year window, plus landfill costs.</p>
+<h2>What Actually Kills Foam Roofs Early</h2>
+<ul>
+<li><strong>Neglected coating</strong> — the #1 cause. Once UV eats through to bare foam, degradation accelerates. Caught early it's a recoat; caught late it's foam replacement in the exposed areas.</li>
+<li><strong>Bad installation</strong> — off-ratio foam, spraying in wrong conditions, or thin coating coverage. This is why applicator experience matters more with SPF than any other system.</li>
+<li><strong>Unrepaired damage</strong> — hail dings and dropped-tool punctures are cheap to <a class="text-secondary underline" href="/foam-roof-repair-fresno.html">patch</a> — and expensive to ignore once water gets in.</li>
+</ul>
+<h2>Maximizing Your Roof's Life in the Central Valley</h2>
+<p>Valley UV is brutal, which makes the recoat discipline even more valuable here. Our maintenance program includes periodic inspections, minor repairs, and recoat scheduling — so the 50-year outcome actually happens. Wondering about the numbers? See the <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">cost guide</a>, or start with a free assessment of your current roof's condition.</p>
+"""),
+
+dict(slug="spray-foam-roofing-installation", hero_img="service-spf-roof.jpg",
+ title="Spray Foam Roofing Installation: What to Expect Step by Step | Allstate",
+ meta_desc="What happens during spray foam roofing installation? The full step-by-step process — prep, application, coating, inspection — and how long it takes, from a 20+ year SPF contractor.",
+ schema_name="Spray Foam Roofing Installation Guide",
+ h1='Spray Foam Roofing <span class="text-secondary">Installation</span>, Step by Step',
+ subhead="What actually happens on your roof during an SPF installation — and what it means for your building's operations while we work.",
+ body="""
+<h2>Before Day One: Assessment &amp; Spec</h2>
+<p>Every installation starts with the free assessment: drone survey, physical inspection, moisture scan, and core samples where warranted. From that we produce a written spec — foam thickness for your target R-value, coating system and thickness, drainage corrections, and detail work at penetrations — plus a firm bid within 48 hours.</p>
+<h2>The Installation Sequence</h2>
+<table>
+<tr><th>Step</th><th>What Happens</th><th>Typical Duration</th></tr>
+<tr><td>1. Prep</td><td>Surface cleaned (usually pressure-washed or air-blown), wet insulation removed, loose materials secured. Existing roof usually stays — no tear-off</td><td>1 day</td></tr>
+<tr><td>2. Masking</td><td>Walls, units, and adjacent surfaces protected from overspray; wind screens set as needed</td><td>Hours</td></tr>
+<tr><td>3. Foam application</td><td>Two-component foam sprayed in controlled passes, expanding and curing in seconds. Slope built into low spots to fix ponding</td><td>1–3 days for most commercial roofs</td></tr>
+<tr><td>4. Coating</td><td>Silicone base coat applied over cured foam, then top coat (with granules where specified) to full spec thickness</td><td>1–2 days</td></tr>
+<tr><td>5. Inspection</td><td>Thickness verifications, adhesion checks, and final walkthrough with photos</td><td>Hours</td></tr>
+</table>
+<h2>What It Means for Your Operations</h2>
+<ul>
+<li><strong>Your building stays open.</strong> Application is from the roof side; there's no interior access needed and no roof deck removal.</li>
+<li><strong>Weather windows matter.</strong> Foam needs dry conditions and moderate wind — in the Central Valley that gives us a generous work season, and we schedule around your operations.</li>
+<li><strong>Odor and overspray are managed</strong> — masking, wind screens, and intake awareness are standard procedure, not extras.</li>
+</ul>
+<h2>Why Applicator Skill Decides Everything</h2>
+<p>SPF is the most installer-sensitive roof system there is: ratio, temperature, pass thickness, and coating coverage all determine whether you get the <a class="text-secondary underline" href="/how-long-does-spray-foam-roofing-last.html">50-year outcome</a> or an early failure. We've been spraying for 20+ years, SPFA-trained, fully licensed (Lic #C-2-1052735). Read more on <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">how SPF systems work</a> or check <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">typical costs</a>.</p>
+"""),
+
+dict(slug="spray-foam-vs-tpo-roofing", hero_img="service-silicone.jpg",
+ title="Spray Foam vs TPO Roofing: Which Is Better for Commercial Buildings? | Allstate",
+ meta_desc="Spray foam vs TPO roofing compared honestly: seams, insulation, lifespan, tear-off, and lifecycle cost for commercial buildings — from a Central Valley SPF contractor.",
+ schema_name="Spray Foam vs TPO Roofing Comparison",
+ h1='Spray Foam vs <span class="text-secondary">TPO</span> Roofing',
+ subhead="The two systems commercial owners compare most — measured on the things that actually decide roof performance: seams, insulation, lifespan, and lifecycle cost.",
+ body="""
+<h2>The Head-to-Head</h2>
+<table>
+<tr><th></th><th>TPO (Single-Ply Membrane)</th><th>SPF + Silicone Coating</th></tr>
+<tr><td>Seams</td><td>Thousands of linear feet, heat-welded — the primary failure point</td><td>Zero. Monolithic, self-flashing surface</td></tr>
+<tr><td>Insulation</td><td>Separate board stock underneath, gaps at joints</td><td>Built-in, continuous, ~R-6.5/inch — highest available</td></tr>
+<tr><td>Attachment</td><td>Mechanically fastened or glued — thousands of penetrations or adhesive fields</td><td>Fully adhered chemically, no fasteners</td></tr>
+<tr><td>Tear-off at install</td><td>Often required</td><td>Rarely — applies over most existing roofs</td></tr>
+<tr><td>Typical service life</td><td>15–25 years, then full replacement</td><td>Decades — recoat every 10–20 years, foam never replaced</td></tr>
+<tr><td>Ponding water</td><td>Warranty exclusions common; membrane sits in it</td><td>Slope can be built in with foam to eliminate ponds</td></tr>
+<tr><td>End of life</td><td>Tear-off to landfill, buy a new roof</td><td>Clean and recoat — the roof renews</td></tr>
+</table>
+<h2>Where TPO Makes Sense</h2>
+<p>We'll be straight: TPO is a legitimate system with a lower first-cost bid on simple, new-construction decks where insulation board is being installed anyway and the roof plane drains perfectly. If you plan to sell the building within 10 years, the cheaper bid may pencil out for you (though the next owner inherits the replacement).</p>
+<h2>Where Foam Wins — Especially in the Central Valley</h2>
+<ul>
+<li><strong>Re-roofing over an existing roof</strong> — no tear-off changes the entire cost equation.</li>
+<li><strong>Hot climates</strong> — continuous insulation plus a reflective coating attacks Fresno's cooling costs from both directions.</li>
+<li><strong>Complex roofs</strong> — penetrations, units, and odd geometry that would mean endless membrane detailing get seamlessly encapsulated.</li>
+<li><strong>Long-hold owners</strong> — over a 40-year window, one SPF system with two recoats typically costs far less than two full TPO installations.</li>
+</ul>
+<h2>Already Have TPO? You Don't Have to Tear It Off</h2>
+<p>An aging TPO roof is actually a good SPF candidate — foam applies directly over it (dry membrane, prepped properly), turning the roof you have into the seamless, insulated roof you wish you'd bought. Get the details in our <a class="text-secondary underline" href="/spray-polyurethane-foam-roofing.html">SPF systems guide</a>, check <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">real cost ranges</a>, or book a free assessment to see if your existing roof qualifies.</p>
 """),
 ]
 
