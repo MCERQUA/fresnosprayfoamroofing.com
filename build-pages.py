@@ -67,7 +67,7 @@ FOOTER = """<!-- CTA band -->
 <div class="space-y-6">
 <img alt="Allstate Spray Foam Roofing logo" class="h-16 w-auto" src="/assets/logo.png"/>
 <p class="text-on-primary-container text-sm leading-relaxed">The Central Valley's authority on spray foam roofing and high-performance industrial coatings.</p>
-<div class="font-label-caps text-secondary uppercase text-[10px]">License C-2-1052735</div>
+<div class="font-label-caps text-secondary uppercase text-[10px]">Fully Licensed · Lic #C-2-1052735</div>
 </div>
 <div>
 <h5 class="font-headline-lg text-on-primary text-xl uppercase mb-6">Our Services</h5>
@@ -251,7 +251,7 @@ dict(slug="spray-polyurethane-foam-roofing", hero_img="service-spf-roof.jpg",
 <h2>The Renewal Cycle — Why SPF Is the Last Roof You Buy</h2>
 <p>When the silicone coating reaches the end of its service window, it gets cleaned, primed, and recoated — no tear-off, no replacement, no disruption to the building below. Industry studies of SPF roofs over 30+ years consistently show the foam performing like new under a maintained coating. That renewal cycle is the fundamental economic difference between foam and every membrane system: read the full cost breakdown in our <a class="text-secondary underline" href="/spray-foam-roofing-cost.html">spray foam roofing cost guide</a>.</p>
 <h2>Installed by SPF Specialists</h2>
-<p>SPF roofing is unforgiving of poor application — substrate prep, ambient conditions, pass thickness, and coating coverage all determine whether the system lasts 5 years or 50. Allstate Spray Foam Roofing has been spraying foam for over 20 years as SPFA-trained applicators, with California license C-2-1052735. See our <a class="text-secondary underline" href="/commercial-roofing-fresno.html">commercial roofing services in Fresno</a> or request a free assessment below.</p>
+<p>SPF roofing is unforgiving of poor application — substrate prep, ambient conditions, pass thickness, and coating coverage all determine whether the system lasts 5 years or 50. Allstate Spray Foam Roofing has been spraying foam for over 20 years as SPFA-trained applicators, fully licensed (Lic #C-2-1052735). See our <a class="text-secondary underline" href="/commercial-roofing-fresno.html">commercial roofing services in Fresno</a> or request a free assessment below.</p>
 """),
 
 dict(slug="commercial-roofing-fresno", hero_img="truck.jpg",
@@ -282,7 +282,7 @@ dict(slug="commercial-roofing-fresno", hero_img="truck.jpg",
 <tr><td>Business disruption</td><td>Days to weeks</td><td>Building stays open during application</td></tr>
 </table>
 <h2>Serving Fresno and the Entire Central Valley</h2>
-<p>Based in the Valley for over 20 years, we serve Fresno, Clovis, Madera, Visalia, Tulare, Hanford, Merced, and Bakersfield. Family-owned, SPFA member, BBB accredited, California license C-2-1052735 — and every assessment starts free, with a drone survey and a written bid within 48 hours.</p>
+<p>Based in the Valley for over 20 years, we serve Fresno, Clovis, Madera, Visalia, Tulare, Hanford, Merced, and Bakersfield. Family-owned, SPFA member, BBB accredited, fully licensed (Lic #C-2-1052735) — and every assessment starts free, with a drone survey and a written bid within 48 hours.</p>
 """),
 ]
 
