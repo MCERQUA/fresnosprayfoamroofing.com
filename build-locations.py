@@ -220,5 +220,234 @@ def build():
     print(f"done: {total} service pages, {short} under length")
 
 
+# ====================================================================
+# VISUAL-RHYTHM OVERRIDES (2026-07-20, per Mike: pages too light/monotone)
+# Band-based assembly + validated brand charts (#3b5a9a/#bb001b, dataviz six-checks PASS).
+# These redefine svc_page/hub_page; the originals above are kept for reference.
+# ====================================================================
+import re as _re
+
+CHART_BLUE, CHART_RED = "#3b5a9a", "#bb001b"
+
+
+def _bar_path(x, y, w, h, r=4):
+    return (f"M{x},{y + h} L{x},{y + r} Q{x},{y} {x + r},{y} L{x + w - r},{y} "
+            f"Q{x + w},{y} {x + w},{y + r} L{x + w},{y + h} Z")
+
+
+def _hbar_path(x, y, w, h, r=4):
+    return (f"M{x},{y} L{x + w - r},{y} Q{x + w},{y} {x + w},{y + r} L{x + w},{y + h - r} "
+            f"Q{x + w},{y + h} {x + w - r},{y + h} L{x},{y + h} Z")
+
+
+def chart_lifecycle():
+    groups = [("Year 0", 6, 7), ("Year 20", 9, 16), ("Year 40", 12, 25)]
+    W, H, TOP, BOT, LEFT = 640, 300, 24, 40, 40
+    plot_h = H - TOP - BOT
+    vmax = 28.0
+    bars, labels, gx = [], [], []
+    gw = (W - LEFT - 20) / len(groups)
+    for i, (name, spf, tpo) in enumerate(groups):
+        cx = LEFT + gw * i + gw / 2
+        for j, (val, col, series) in enumerate(((spf, CHART_BLUE, "SPF + recoats"), (tpo, CHART_RED, "TPO replacements"))):
+            bw = 44
+            x = cx - bw - 1 if j == 0 else cx + 1
+            h = plot_h * val / vmax
+            y = TOP + plot_h - h
+            bars.append(f'<path d="{_bar_path(x, y, bw, h)}" fill="{col}"><title>{series}, {name}: ${val}/sq ft cumulative</title></path>')
+            labels.append(f'<text x="{x + bw / 2}" y="{y - 6}" text-anchor="middle" font-size="13" font-weight="600" fill="#101c2c">${val}</text>')
+        gx.append(f'<text x="{cx}" y="{H - 14}" text-anchor="middle" font-size="12" fill="#44464e">{name}</text>')
+    grid = "".join(f'<line x1="{LEFT}" x2="{W - 20}" y1="{TOP + plot_h - plot_h * v / vmax}" y2="{TOP + plot_h - plot_h * v / vmax}" stroke="#c5c6cf" stroke-width="1"/>'
+                   f'<text x="{LEFT - 6}" y="{TOP + plot_h - plot_h * v / vmax + 4}" text-anchor="end" font-size="11" fill="#75777f">${v}</text>'
+                   for v in (10, 20))
+    base = f'<line x1="{LEFT}" x2="{W - 20}" y1="{TOP + plot_h}" y2="{TOP + plot_h}" stroke="#75777f" stroke-width="1"/>'
+    legend = (f'<div class="flex gap-6 mb-2 font-label-caps text-[11px] uppercase text-on-surface-variant">'
+              f'<span class="flex items-center gap-2"><span style="background:{CHART_BLUE};width:14px;height:14px;display:inline-block;border-radius:3px"></span>SPF + recoats</span>'
+              f'<span class="flex items-center gap-2"><span style="background:{CHART_RED};width:14px;height:14px;display:inline-block;border-radius:3px"></span>TPO replacements</span></div>')
+    return (f'<figure class="chart-fig my-10"><h3>Cumulative Cost of Ownership: Typical $/Sq Ft</h3>{legend}'
+            f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Cumulative cost per square foot over 40 years: SPF reaches about 12 dollars with recoats while TPO reaches about 25 dollars with replacements">'
+            f"{grid}{''.join(bars)}{''.join(labels)}{''.join(gx)}{base}</svg>"
+            f'<figcaption class="chart-note">Typical mid-range figures for illustration: SPF ~$6/sq ft installed plus ~$3 recoats on a 15-20 year cycle; '
+            f'TPO ~$7/sq ft installed plus tear-off and full replacement each ~20-year life. Your written bid prices your actual roof.</figcaption></figure>')
+
+
+def chart_rvalue():
+    rows = [("SPF closed-cell foam", 6.5, CHART_RED), ("Polyiso board", 5.7, CHART_BLUE),
+            ("XPS board", 5.0, CHART_BLUE), ("EPS board", 3.8, CHART_BLUE), ("Fiberglass batt", 3.2, CHART_BLUE)]
+    W, LEFT, RH, GAP, TOP = 640, 170, 34, 14, 16
+    H = TOP + len(rows) * (RH + GAP) + 24
+    vmax = 7.0
+    parts = []
+    for i, (name, val, col) in enumerate(rows):
+        y = TOP + i * (RH + GAP)
+        w = (W - LEFT - 60) * val / vmax
+        parts.append(f'<text x="{LEFT - 8}" y="{y + RH / 2 + 4}" text-anchor="end" font-size="12" fill="#44464e">{name}</text>')
+        parts.append(f'<path d="{_hbar_path(LEFT, y, w, RH)}" fill="{col}"><title>{name}: R-{val} per inch</title></path>')
+        parts.append(f'<text x="{LEFT + w + 8}" y="{y + RH / 2 + 4}" font-size="13" font-weight="600" fill="#101c2c">R-{val}</text>')
+    base = f'<line x1="{LEFT}" x2="{LEFT}" y1="{TOP - 4}" y2="{H - 20}" stroke="#75777f" stroke-width="1"/>'
+    return (f'<figure class="chart-fig my-10"><h3>Insulation R-Value Per Inch</h3>'
+            f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="R-value per inch by material: SPF closed-cell foam leads at R-6.5">'
+            f"{''.join(parts)}{base}</svg>"
+            f'<figcaption class="chart-note">Nominal R-value per inch of thickness, typical published values. Closed-cell SPF leads every common commercial insulation.</figcaption></figure>')
+
+
+STAT_TILES = (
+    '<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 py-4 text-center">'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">R-6.5</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Per Inch, Highest Available</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">~85%</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Solar Energy Reflected</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">10-20 yr</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Renewable Recoat Cycle</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">48 hr</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Written Bid After Assessment</div></div>'
+    '</div>')
+
+SERVICE_PHOTO = {
+    "spray-foam-roofing": ("service-spf-roof.jpg", "Fresh spray polyurethane foam on a commercial low-slope roof"),
+    "silicone-roof-coating": ("service-silicone.jpg", "Spray-applying bright white silicone coating over a commercial roof"),
+    "foam-roof-repair": ("foam-macro.jpg", "Closed-cell spray foam up close: dense, waterproof, repairable"),
+    "commercial-insulation": ("service-insulation.jpg", "Spray foam insulation going into a commercial warehouse ceiling"),
+}
+
+_CONTENT_ANCHOR = ('<!-- Content -->\n<section class="py-20 bg-background">\n'
+                   '<div class="container max-w-4xl mx-auto px-margin-mobile md:px-gutter prose-band">\n'
+                   '{body}\n{faq_html}\n</div>\n</section>')
+
+
+def _split_sections(body):
+    parts = _re.split(r"(?=<h2>)", body)
+    if parts and not parts[0].strip():
+        parts = parts[1:]
+    if len(parts) >= 2 and not parts[0].startswith("<h2>"):
+        parts[1] = parts[0] + parts[1]
+        parts = parts[1:]
+    return parts
+
+
+def _band(inner, style, dark=False):
+    prose = "prose-dark" if dark else "prose-band"
+    return (f'<section class="py-16 {style}">'
+            f'<div class="container max-w-4xl mx-auto px-margin-mobile md:px-gutter {prose}">{inner}</div></section>')
+
+
+def svc_page(a, s, c):
+    ar, sv = AREAS[a], SERVICES[s]
+    slug = f"{a}/{s}"
+    title = c.get("title") or f"{sv['name']} {ar['name']}, CA | Allstate Spray Foam"
+    schema = ('<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org", "@type": "Service",
+        "name": f"{sv['name']} — {ar['name']}, CA",
+        "provider": {"@id": BASE + "/#contractor"},
+        "areaServed": area_schema(a), "url": f"{BASE}/{slug}",
+    }) + "\n</script>\n"
+        + '<script type="application/ld+json">\n' + json.dumps({
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE + "/"},
+                {"@type": "ListItem", "position": 2, "name": ar["name"], "item": f"{BASE}/{a}/"},
+                {"@type": "ListItem", "position": 3, "name": sv["name"], "item": f"{BASE}/{slug}"},
+            ]}) + "\n</script>")
+    faqs = [(q, ans, None) for q, ans in c.get("faqs", [])]
+    faq_schema, faq_html = bp.faq_blocks({"faqs": faqs})
+    sibs = [f'<a class="text-secondary underline" href="/{a}/{s2}">{SERVICES[s2]["name"]} in {ar["name"]}</a>'
+            for s2 in SERVICES if s2 != s and (a, s2) not in SKIP]
+    order = list(AREAS)
+    i = order.index(a)
+    neighbors = [order[(i + 1) % len(order)], order[(i - 1) % len(order)]]
+    nb = [f'<a class="text-secondary underline" href="/{n}/{s}">{SERVICES[s]["name"]} in {AREAS[n]["name"]}</a>'
+          for n in neighbors if (n, s) not in SKIP]
+    silo = ('<h2>More From Allstate in ' + ar["name"] + '</h2><p>Also serving ' + ar["name"]
+            + ': ' + ' · '.join(sibs) + '. See all ' + ar["name"] + ' services on the '
+            + f'<a class="text-secondary underline" href="/{a}/">{ar["name"]} service hub</a>, '
+            + f'or read our full <a class="text-secondary underline" href="{sv["parent"]}">'
+            + sv["name"].lower() + ' guide</a>.'
+            + (' Nearby: ' + ' · '.join(nb) + '.' if nb else '') + '</p>')
+
+    secs = _split_sections(c["body_html"])
+    n = len(secs)
+    q = max(1, n // 4)
+    g1, g2, g3, g4 = secs[:q + 1], secs[q + 1:2 * q + 1], secs[2 * q + 1:3 * q + 1], secs[3 * q + 1:]
+    chart = chart_rvalue() if s == "commercial-insulation" else chart_lifecycle()
+    photo_f, photo_alt = SERVICE_PHOTO[s]
+    photo = (f'<figure class="my-4"><img src="/assets/{photo_f}" alt="{photo_alt}" '
+             f'class="w-full border-2 border-primary" loading="lazy" decoding="async" width="900" height="600"/>'
+             f'<figcaption class="font-label-caps text-on-surface-variant text-[10px] uppercase mt-2 tracking-widest">{photo_alt}</figcaption></figure>')
+    diagram = ('<figure class="my-4"><img src="/assets/spf-roof-cross-section.webp" '
+               'alt="Labeled cross-section diagram of a spray polyurethane foam roof system" '
+               'class="w-full border-2 border-primary" loading="lazy" decoding="async" width="1200" height="900"/>'
+               '<figcaption class="font-label-caps text-on-surface-variant text-[10px] uppercase mt-2 tracking-widest">The layered SPF roof system, deck to coating</figcaption></figure>') \
+        if s == "spray-foam-roofing" else ""
+    body = (
+        _band("".join(g1), "bg-background")
+        + '<div class="rwb-stripe"></div>'
+        + _band(STAT_TILES + "".join(g2), "bg-primary-container", dark=True)
+        + _band(chart + "".join(g3), "bg-background")
+        + _band(photo + "".join(g4[:max(0, len(g4) - 1)]), "bg-surface-variant")
+        + _band(diagram + "".join(g4[max(0, len(g4) - 1):]) + silo, "bg-background")
+        + (_band(faq_html, "bg-surface-container-low") if faq_html else "")
+    )
+    breadcrumb_html = (f'<p class="font-label-caps text-on-primary-container text-[11px] uppercase">'
+                       f'<a class="hover:text-secondary-fixed" href="/">Home</a> / '
+                       f'<a class="hover:text-secondary-fixed" href="/{a}/">{ar["name"]}</a> / {sv["name"]}</p>\n')
+    tpl = bp.TEMPLATE.replace(_CONTENT_ANCHOR, '<!-- Content bands -->\n{body}')
+    assert '<!-- Content bands -->' in tpl, "content anchor not matched in bp.TEMPLATE"
+    html = tpl.format(
+        base=BASE, head_shared=bp.HEAD_SHARED, header=bp.HEADER,
+        footer=bp.FOOTER.replace("{form_block}", bp.FORM_BLOCK).replace("{cta_area}", f'anywhere in {ar["county"]}'),
+        slug=slug, title=title, meta_desc=c["meta_desc"], h1=c["h1"], subhead=c["subhead"],
+        hero_img=sv["hero_img"], schema_block=schema, faq_schema=faq_schema,
+        body=body, updated_line=breadcrumb_html)
+    out = os.path.join(SITE, a, s + ".html")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write(html)
+    words = len(_re.sub(r"<[^>]+>", " ", c["body_html"]).split())
+    print(f"wrote {out} ({words} body words, banded)")
+    return words
+
+
+def hub_page(a, c):
+    ar = AREAS[a]
+    slug = f"{a}/"
+    cards = "\n".join(
+        f'<div class="bg-surface-container-lowest industrial-card-border p-8 space-y-3">'
+        f'<h3 class="font-headline-lg text-primary text-2xl uppercase">{SERVICES[s]["name"]}</h3>'
+        f'<p class="text-on-surface-variant">{c["service_teasers"].get(s, "")}</p>'
+        f'<a href="{("/foam-roof-repair-fresno" if (a, s) in SKIP else f"/{a}/{s}")}" class="font-label-caps text-secondary uppercase tracking-widest">'
+        f'{SERVICES[s]["name"]} in {ar["name"]} →</a></div>'
+        for s in SERVICES)
+    schema = ('<script type="application/ld+json">\n' + json.dumps({
+        "@context": "https://schema.org", "@type": "Service",
+        "name": f"Commercial Roofing & Insulation Services — {ar['name']}, CA",
+        "provider": {"@id": BASE + "/#contractor"}, "areaServed": area_schema(a),
+        "url": f"{BASE}/{slug}"}) + "\n</script>\n"
+        + '<script type="application/ld+json">\n' + json.dumps({
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE + "/"},
+                {"@type": "ListItem", "position": 2, "name": ar["name"], "item": f"{BASE}/{a}/"},
+            ]}) + "\n</script>")
+    photo = ('<figure class="my-4"><img src="/assets/truck-trailer.jpg" alt="Allstate wrapped service truck and equipment trailer" '
+             'class="w-full border-2 border-primary" loading="lazy" decoding="async" width="1200" height="529"/></figure>')
+    coverage = ('<h2>Service Area</h2><p>From ' + ar["name"] + ' we cover all of ' + ar["county"]
+                + ' including ' + ', '.join(ar["satellites"]) + '. Crews dispatch from our Tulare County shop — '
+                + ar["name"] + ' is ' + ar["drive"] + '.</p>')
+    body = (
+        _band(c["hub_intro_html"], "bg-background")
+        + '<div class="rwb-stripe"></div>'
+        + _band(STAT_TILES, "bg-primary-container", dark=True)
+        + _band('<h2>Our Services in ' + ar["name"] + '</h2><div class="grid md:grid-cols-2 gap-6">' + cards + '</div>', "bg-background")
+        + _band(photo + coverage, "bg-surface-variant")
+    )
+    tpl = bp.TEMPLATE.replace(_CONTENT_ANCHOR, '<!-- Content bands -->\n{body}')
+    html = tpl.format(
+        base=BASE, head_shared=bp.HEAD_SHARED, header=bp.HEADER,
+        footer=bp.FOOTER.replace("{form_block}", bp.FORM_BLOCK).replace("{cta_area}", f'anywhere in {ar["county"]}'),
+        slug=slug, title=c.get("hub_title") or f"Commercial Roofing & Insulation {ar['name']}, CA | Allstate",
+        meta_desc=c["hub_meta_desc"], h1=c["hub_h1"], subhead=c["hub_subhead"],
+        hero_img="hero-aerial.jpg", schema_block=schema, faq_schema="",
+        body=body, updated_line="")
+    out = os.path.join(SITE, a, "index.html")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    open(out, "w").write(html)
+    print("wrote", out, "(banded hub)")
+
+
 if __name__ == "__main__":
     build()
