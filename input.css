@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom site styles (formerly inline <style> blocks) */
+.rwb-stripe {
+  background: linear-gradient(to right, #bb001b 33.3%, #ffffff 33.3%, #ffffff 66.6%, #0a1f44 66.6%);
+  height: 4px;
+  width: 100%;
+}
+.industrial-card-border {
+  border-bottom: 2px solid #0a1f44;
+  transition: border-bottom 0.3s ease;
+}
+.industrial-card-border:hover {
+  border-bottom: 4px solid #bb001b;
+}
+.flag-texture {
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.prose-band h2 { font-family: 'Archivo Narrow'; text-transform: uppercase; font-weight: 700; font-size: 28px; color: #00081e; margin: 2.5rem 0 1rem; }
+.prose-band h3 { font-family: 'Archivo Narrow'; text-transform: uppercase; font-weight: 700; font-size: 20px; color: #0a1f44; margin: 2rem 0 .75rem; }
+.prose-band p { margin: 0 0 1rem; line-height: 1.7; color: #44464e; }
+.prose-band ul { margin: 0 0 1.25rem 1.25rem; list-style: none; }
+.prose-band li { position: relative; padding-left: 1.5rem; margin-bottom: .5rem; color: #44464e; line-height: 1.6; }
+.prose-band li:before { content: "\2605"; color: #bb001b; position: absolute; left: 0; font-size: .8rem; top: .2rem; }
+.prose-band table { width: 100%; border-collapse: collapse; margin: 0 0 1.5rem; }
+.prose-band th { background: #0a1f44; color: #fff; font-family: 'JetBrains Mono'; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; padding: .75rem; text-align: left; }
+.prose-band td { border-bottom: 1px solid #c5c6cf; padding: .75rem; color: #44464e; font-size: 15px; }
+/* FAQ details inside prose-band shouldn't get list stars */
+.prose-band details li:before { content: none; }
+.prose-band summary { list-style: none; }
