@@ -34,3 +34,20 @@
 /* FAQ details inside prose-band shouldn't get list stars */
 .prose-band details li:before { content: none; }
 .prose-band summary { list-style: none; }
+
+/* Inverted band prose (navy) */
+.prose-dark h2 { font-family: 'Archivo Narrow'; text-transform: uppercase; font-weight: 700; font-size: 28px; color: #ffffff; margin: 2.5rem 0 1rem; }
+.prose-dark h3 { font-family: 'Archivo Narrow'; text-transform: uppercase; font-weight: 700; font-size: 20px; color: #d9e2ff; margin: 2rem 0 .75rem; }
+.prose-dark p, .prose-dark li { color: #b4c6f4; line-height: 1.7; }
+.prose-dark p { margin: 0 0 1rem; }
+.prose-dark ul { margin: 0 0 1.25rem 1.25rem; list-style: none; }
+.prose-dark li { position: relative; padding-left: 1.5rem; margin-bottom: .5rem; }
+.prose-dark li:before { content: "\2605"; color: #ffdad7; position: absolute; left: 0; font-size: .8rem; top: .2rem; }
+.prose-dark strong { color: #ffffff; }
+.prose-dark a { color: #ffdad7; text-decoration: underline; }
+.prose-dark table { width: 100%; border-collapse: collapse; margin: 0 0 1.5rem; }
+.prose-dark th { background: #041a3f; color: #fff; font-family: 'JetBrains Mono'; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; padding: .75rem; text-align: left; }
+.prose-dark td { border-bottom: 1px solid rgba(255,255,255,.2); padding: .75rem; color: #d9e2ff; font-size: 15px; }
+/* Chart figure */
+.chart-fig svg { width: 100%; height: auto; display: block; }
+.chart-fig .chart-note { font-size: 12px; color: #75777f; margin-top: .5rem; line-height: 1.5; }
