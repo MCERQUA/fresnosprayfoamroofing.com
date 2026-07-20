@@ -18,47 +18,59 @@
   from = "/spray-polyurethane-foam-roofing.html"
   to = "/spray-polyurethane-foam-roofing"
   status = 301
+  force = true
 [[redirects]]
   from = "/foam-roof-repair-fresno.html"
   to = "/foam-roof-repair-fresno"
   status = 301
+  force = true
 [[redirects]]
   from = "/commercial-roofing-fresno.html"
   to = "/commercial-roofing-fresno"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-cost.html"
   to = "/spray-foam-roofing-cost"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-visalia.html"
   to = "/spray-foam-roofing-visalia"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-tulare.html"
   to = "/spray-foam-roofing-tulare"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-hanford.html"
   to = "/spray-foam-roofing-hanford"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-merced.html"
   to = "/spray-foam-roofing-merced"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-bakersfield.html"
   to = "/spray-foam-roofing-bakersfield"
   status = 301
+  force = true
 [[redirects]]
   from = "/how-long-does-spray-foam-roofing-last.html"
   to = "/how-long-does-spray-foam-roofing-last"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-roofing-installation.html"
   to = "/spray-foam-roofing-installation"
   status = 301
+  force = true
 [[redirects]]
   from = "/spray-foam-vs-tpo-roofing.html"
   to = "/spray-foam-vs-tpo-roofing"
   status = 301
+  force = true
