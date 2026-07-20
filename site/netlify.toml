@@ -4,7 +4,7 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=2592000"
 
 [[headers]]
   for = "/*"
@@ -12,3 +12,53 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Canonical URL scheme: extensionless. 301 the .html variants (WO-2).
+[[redirects]]
+  from = "/spray-polyurethane-foam-roofing.html"
+  to = "/spray-polyurethane-foam-roofing"
+  status = 301
+[[redirects]]
+  from = "/foam-roof-repair-fresno.html"
+  to = "/foam-roof-repair-fresno"
+  status = 301
+[[redirects]]
+  from = "/commercial-roofing-fresno.html"
+  to = "/commercial-roofing-fresno"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-cost.html"
+  to = "/spray-foam-roofing-cost"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-visalia.html"
+  to = "/spray-foam-roofing-visalia"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-tulare.html"
+  to = "/spray-foam-roofing-tulare"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-hanford.html"
+  to = "/spray-foam-roofing-hanford"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-merced.html"
+  to = "/spray-foam-roofing-merced"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-bakersfield.html"
+  to = "/spray-foam-roofing-bakersfield"
+  status = 301
+[[redirects]]
+  from = "/how-long-does-spray-foam-roofing-last.html"
+  to = "/how-long-does-spray-foam-roofing-last"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-roofing-installation.html"
+  to = "/spray-foam-roofing-installation"
+  status = 301
+[[redirects]]
+  from = "/spray-foam-vs-tpo-roofing.html"
+  to = "/spray-foam-vs-tpo-roofing"
+  status = 301
