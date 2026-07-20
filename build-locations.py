@@ -80,7 +80,11 @@ def svc_page(a, s, c):
     schema = ('<script type="application/ld+json">\n' + json.dumps({
         "@context": "https://schema.org", "@type": "Service",
         "name": f"{sv['name']} — {ar['name']}, CA",
-        "provider": {"@id": BASE + "/#contractor"},
+        "provider": {"@type": "RoofingContractor", "@id": BASE + "/#contractor",
+                     "name": "Allstate Spray Foam Roofing — Fresno", "url": BASE + "/",
+                     "telephone": "+15597399519",
+                     "address": {"@type": "PostalAddress", "addressLocality": "Fresno", "addressRegion": "CA", "addressCountry": "US"},
+                     "hasCredential": "California Contractors License C-2-1052735"},
         "areaServed": area_schema(a), "url": f"{BASE}/{slug}",
     }) + "\n</script>\n"
         + '<script type="application/ld+json">\n' + json.dumps({
@@ -111,7 +115,7 @@ def svc_page(a, s, c):
                        f'<a class="hover:text-secondary-fixed" href="/{a}/">{ar["name"]}</a> / {sv["name"]}</p>\n')
     html = bp.TEMPLATE.format(
         base=BASE, head_shared=bp.HEAD_SHARED, header=bp.HEADER,
-        footer=bp.FOOTER.replace("{form_block}", bp.FORM_BLOCK).replace("{cta_area}", f'anywhere in {ar["county"]}'),
+        footer=footer_html,
         slug=slug, title=title, meta_desc=c["meta_desc"], h1=c["h1"], subhead=c["subhead"],
         hero_img=sv["hero_img"], schema_block=schema, faq_schema=faq_schema,
         faq_html=faq_html, body=c["body_html"] + silo, updated_line=breadcrumb_html)
@@ -136,7 +140,11 @@ def hub_page(a, c):
     schema = ('<script type="application/ld+json">\n' + json.dumps({
         "@context": "https://schema.org", "@type": "Service",
         "name": f"Commercial Roofing & Insulation Services — {ar['name']}, CA",
-        "provider": {"@id": BASE + "/#contractor"}, "areaServed": area_schema(a),
+        "provider": {"@type": "RoofingContractor", "@id": BASE + "/#contractor",
+                     "name": "Allstate Spray Foam Roofing — Fresno", "url": BASE + "/",
+                     "telephone": "+15597399519",
+                     "address": {"@type": "PostalAddress", "addressLocality": "Fresno", "addressRegion": "CA", "addressCountry": "US"},
+                     "hasCredential": "California Contractors License C-2-1052735"}, "areaServed": area_schema(a),
         "url": f"{BASE}/{slug}"}) + "\n</script>\n"
         + '<script type="application/ld+json">\n' + json.dumps({
             "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -175,6 +183,7 @@ def rebuild_netlify():
         lines += [f'[[redirects]]\n  from = "/{p}.html"\n  to = "/{p}"\n  status = 301\n  force = true']
     for a, s in cells():
         lines += [f'[[redirects]]\n  from = "/{a}/{s}.html"\n  to = "/{a}/{s}"\n  status = 301\n  force = true']
+    lines += ['[[redirects]]\n  from = "/privacy.html"\n  to = "/privacy"\n  status = 301\n  force = true']
     for old, new in LEGACY_301.items():
         lines += [f'[[redirects]]\n  from = "{old}"\n  to = "{new}"\n  status = 301\n  force = true',
                   f'[[redirects]]\n  from = "{old}.html"\n  to = "{new}"\n  status = 301\n  force = true']
@@ -190,8 +199,16 @@ def rebuild_sitemap():
             ("spray-foam-vs-tpo-roofing", "0.7")]
     urls += [(f"{a}/", "0.8") for a in AREAS]
     urls += [(f"{a}/{s}", "0.8") for a, s in cells()]
+    import datetime
+    def _mtime(u):
+        f = "index.html" if u == "" else (u + "index.html" if u.endswith("/") else u + ".html")
+        p = os.path.join(SITE, f)
+        try:
+            return datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat()
+        except OSError:
+            return "2026-07-20"
     body = "\n".join(
-        f"  <url>\n    <loc>{BASE}/{u}</loc>\n    <lastmod>2026-07-20</lastmod>\n"
+        f"  <url>\n    <loc>{BASE}/{u}</loc>\n    <lastmod>{_mtime(u)}</lastmod>\n"
         f"    <changefreq>monthly</changefreq>\n    <priority>{p}</priority>\n  </url>" for u, p in urls)
     open(path, "w").write('<?xml version="1.0" encoding="UTF-8"?>\n'
                           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "\n</urlset>\n")
@@ -255,17 +272,17 @@ def chart_lifecycle():
             h = plot_h * val / vmax
             y = TOP + plot_h - h
             bars.append(f'<path d="{_bar_path(x, y, bw, h)}" fill="{col}"><title>{series}, {name}: ${val}/sq ft cumulative</title></path>')
-            labels.append(f'<text x="{x + bw / 2}" y="{y - 6}" text-anchor="middle" font-size="13" font-weight="600" fill="#101c2c">${val}</text>')
-        gx.append(f'<text x="{cx}" y="{H - 14}" text-anchor="middle" font-size="12" fill="#44464e">{name}</text>')
+            labels.append(f'<text x="{x + bw / 2}" y="{y - 6}" text-anchor="middle" font-size="17" font-weight="600" fill="#101c2c">${val}</text>')
+        gx.append(f'<text x="{cx}" y="{H - 14}" text-anchor="middle" font-size="15" fill="#44464e">{name}</text>')
     grid = "".join(f'<line x1="{LEFT}" x2="{W - 20}" y1="{TOP + plot_h - plot_h * v / vmax}" y2="{TOP + plot_h - plot_h * v / vmax}" stroke="#c5c6cf" stroke-width="1"/>'
-                   f'<text x="{LEFT - 6}" y="{TOP + plot_h - plot_h * v / vmax + 4}" text-anchor="end" font-size="11" fill="#75777f">${v}</text>'
+                   f'<text x="{LEFT - 6}" y="{TOP + plot_h - plot_h * v / vmax + 4}" text-anchor="end" font-size="14" fill="#75777f">${v}</text>'
                    for v in (10, 20))
     base = f'<line x1="{LEFT}" x2="{W - 20}" y1="{TOP + plot_h}" y2="{TOP + plot_h}" stroke="#75777f" stroke-width="1"/>'
     legend = (f'<div class="flex gap-6 mb-2 font-label-caps text-[11px] uppercase text-on-surface-variant">'
               f'<span class="flex items-center gap-2"><span style="background:{CHART_BLUE};width:14px;height:14px;display:inline-block;border-radius:3px"></span>SPF + recoats</span>'
               f'<span class="flex items-center gap-2"><span style="background:{CHART_RED};width:14px;height:14px;display:inline-block;border-radius:3px"></span>TPO replacements</span></div>')
     return (f'<figure class="chart-fig my-10"><h3>Cumulative Cost of Ownership: Typical $/Sq Ft</h3>{legend}'
-            f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="Cumulative cost per square foot over 40 years: SPF reaches about 12 dollars with recoats while TPO reaches about 25 dollars with replacements">'
+            f'<div class="overflow-x-auto"><div class="min-w-[560px]"><svg viewBox="0 0 {W} {H}" role="img" aria-label="Cumulative cost per square foot over 40 years: SPF reaches about 12 dollars with recoats while TPO reaches about 25 dollars with replacements">'
             f"{grid}{''.join(bars)}{''.join(labels)}{''.join(gx)}{base}</svg>"
             f'<figcaption class="chart-note">Typical mid-range figures for illustration: SPF ~$6/sq ft installed plus ~$3 recoats on a 15-20 year cycle; '
             f'TPO ~$7/sq ft installed plus tear-off and full replacement each ~20-year life. Your written bid prices your actual roof.</figcaption></figure>')
@@ -281,13 +298,13 @@ def chart_rvalue():
     for i, (name, val, col) in enumerate(rows):
         y = TOP + i * (RH + GAP)
         w = (W - LEFT - 60) * val / vmax
-        parts.append(f'<text x="{LEFT - 8}" y="{y + RH / 2 + 4}" text-anchor="end" font-size="12" fill="#44464e">{name}</text>')
+        parts.append(f'<text x="{LEFT - 8}" y="{y + RH / 2 + 4}" text-anchor="end" font-size="15" fill="#44464e">{name}</text>')
         parts.append(f'<path d="{_hbar_path(LEFT, y, w, RH)}" fill="{col}"><title>{name}: R-{val} per inch</title></path>')
-        parts.append(f'<text x="{LEFT + w + 8}" y="{y + RH / 2 + 4}" font-size="13" font-weight="600" fill="#101c2c">R-{val}</text>')
+        parts.append(f'<text x="{LEFT + w + 8}" y="{y + RH / 2 + 4}" font-size="17" font-weight="600" fill="#101c2c">R-{val}</text>')
     base = f'<line x1="{LEFT}" x2="{LEFT}" y1="{TOP - 4}" y2="{H - 20}" stroke="#75777f" stroke-width="1"/>'
     return (f'<figure class="chart-fig my-10"><h3>Insulation R-Value Per Inch</h3>'
-            f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="R-value per inch by material: SPF closed-cell foam leads at R-6.5">'
-            f"{''.join(parts)}{base}</svg>"
+            f'<div class="overflow-x-auto"><div class="min-w-[560px]"><svg viewBox="0 0 {W} {H}" role="img" aria-label="R-value per inch by material: SPF closed-cell foam leads at R-6.5">'
+            f"{''.join(parts)}{base}</svg></div></div>"
             f'<figcaption class="chart-note">Nominal R-value per inch of thickness, typical published values. Closed-cell SPF leads every common commercial insulation.</figcaption></figure>')
 
 
@@ -296,6 +313,14 @@ STAT_TILES = (
     '<div><div class="font-headline-lg text-on-primary text-3xl">R-6.5</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Per Inch, Highest Available</div></div>'
     '<div><div class="font-headline-lg text-on-primary text-3xl">~85%</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Solar Energy Reflected</div></div>'
     '<div><div class="font-headline-lg text-on-primary text-3xl">10-20 yr</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Renewable Recoat Cycle</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">48 hr</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Written Bid After Assessment</div></div>'
+    '</div>')
+
+STAT_TILES_INSULATION = (
+    '<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 py-4 text-center">'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">R-6.5</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Per Inch, Closed-Cell</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">~2x</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">The R-Value of Fiberglass</div></div>'
+    '<div><div class="font-headline-lg text-on-primary text-3xl">Air-Seal</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Insulation + Barrier, One Pass</div></div>'
     '<div><div class="font-headline-lg text-on-primary text-3xl">48 hr</div><div class="font-label-caps text-secondary-fixed text-[10px] uppercase">Written Bid After Assessment</div></div>'
     '</div>')
 
@@ -334,7 +359,11 @@ def svc_page(a, s, c):
     schema = ('<script type="application/ld+json">\n' + json.dumps({
         "@context": "https://schema.org", "@type": "Service",
         "name": f"{sv['name']} — {ar['name']}, CA",
-        "provider": {"@id": BASE + "/#contractor"},
+        "provider": {"@type": "RoofingContractor", "@id": BASE + "/#contractor",
+                     "name": "Allstate Spray Foam Roofing — Fresno", "url": BASE + "/",
+                     "telephone": "+15597399519",
+                     "address": {"@type": "PostalAddress", "addressLocality": "Fresno", "addressRegion": "CA", "addressCountry": "US"},
+                     "hasCredential": "California Contractors License C-2-1052735"},
         "areaServed": area_schema(a), "url": f"{BASE}/{slug}",
     }) + "\n</script>\n"
         + '<script type="application/ld+json">\n' + json.dumps({
@@ -362,8 +391,9 @@ def svc_page(a, s, c):
 
     secs = _split_sections(c["body_html"])
     n = len(secs)
-    q = max(1, n // 4)
-    g1, g2, g3, g4 = secs[:q + 1], secs[q + 1:2 * q + 1], secs[2 * q + 1:3 * q + 1], secs[3 * q + 1:]
+    q = max(1, n // 5)
+    g1, g2, g3, g4, g5 = (secs[:q + 1], secs[q + 1:2 * q + 1], secs[2 * q + 1:3 * q + 1],
+                          secs[3 * q + 1:4 * q + 1], secs[4 * q + 1:])
     chart = chart_rvalue() if s == "commercial-insulation" else chart_lifecycle()
     photo_f, photo_alt = SERVICE_PHOTO[s]
     photo = (f'<figure class="my-4"><img src="/assets/{photo_f}" alt="{photo_alt}" '
@@ -374,23 +404,30 @@ def svc_page(a, s, c):
                'class="w-full border-2 border-primary" loading="lazy" decoding="async" width="1200" height="900"/>'
                '<figcaption class="font-label-caps text-on-surface-variant text-[10px] uppercase mt-2 tracking-widest">The layered SPF roof system, deck to coating</figcaption></figure>') \
         if s == "spray-foam-roofing" else ""
+    tiles = STAT_TILES_INSULATION if s == "commercial-insulation" else STAT_TILES
     body = (
         _band("".join(g1), "bg-background")
         + '<div class="rwb-stripe"></div>'
-        + _band(STAT_TILES + "".join(g2), "bg-primary-container", dark=True)
+        + _band(tiles + "".join(g2), "bg-primary-container", dark=True)
         + _band(chart + "".join(g3), "bg-background")
-        + _band(photo + "".join(g4[:max(0, len(g4) - 1)]), "bg-surface-variant")
-        + _band(diagram + "".join(g4[max(0, len(g4) - 1):]) + silo, "bg-background")
-        + (_band(faq_html, "bg-surface-container-low") if faq_html else "")
+        + _band(photo + "".join(g4), "bg-surface-variant")
+        + _band(diagram + "".join(g5[:max(0, len(g5) - 1)]), "bg-background")
+        + _band("".join(g5[max(0, len(g5) - 1):]) + silo, "bg-surface-container-low")
+        + (_band(faq_html, "bg-background") if faq_html else "")
     )
     breadcrumb_html = (f'<p class="font-label-caps text-on-primary-container text-[11px] uppercase">'
                        f'<a class="hover:text-secondary-fixed" href="/">Home</a> / '
                        f'<a class="hover:text-secondary-fixed" href="/{a}/">{ar["name"]}</a> / {sv["name"]}</p>\n')
+    footer_html = bp.FOOTER.replace("{form_block}", bp.FORM_BLOCK).replace("{cta_area}", f'anywhere in {ar["county"]}')
+    if s == "commercial-insulation":
+        footer_html = (footer_html
+                       .replace("Get Your Free Roof Assessment", "Get Your Free Building Assessment")
+                       .replace(">Current Roof Type</label>", ">Building / Roof Type</label>"))
     tpl = bp.TEMPLATE.replace(_CONTENT_ANCHOR, '<!-- Content bands -->\n{body}')
     assert '<!-- Content bands -->' in tpl, "content anchor not matched in bp.TEMPLATE"
     html = tpl.format(
         base=BASE, head_shared=bp.HEAD_SHARED, header=bp.HEADER,
-        footer=bp.FOOTER.replace("{form_block}", bp.FORM_BLOCK).replace("{cta_area}", f'anywhere in {ar["county"]}'),
+        footer=footer_html,
         slug=slug, title=title, meta_desc=c["meta_desc"], h1=c["h1"], subhead=c["subhead"],
         hero_img=sv["hero_img"], schema_block=schema, faq_schema=faq_schema,
         body=body, updated_line=breadcrumb_html)
@@ -415,7 +452,11 @@ def hub_page(a, c):
     schema = ('<script type="application/ld+json">\n' + json.dumps({
         "@context": "https://schema.org", "@type": "Service",
         "name": f"Commercial Roofing & Insulation Services — {ar['name']}, CA",
-        "provider": {"@id": BASE + "/#contractor"}, "areaServed": area_schema(a),
+        "provider": {"@type": "RoofingContractor", "@id": BASE + "/#contractor",
+                     "name": "Allstate Spray Foam Roofing — Fresno", "url": BASE + "/",
+                     "telephone": "+15597399519",
+                     "address": {"@type": "PostalAddress", "addressLocality": "Fresno", "addressRegion": "CA", "addressCountry": "US"},
+                     "hasCredential": "California Contractors License C-2-1052735"}, "areaServed": area_schema(a),
         "url": f"{BASE}/{slug}"}) + "\n</script>\n"
         + '<script type="application/ld+json">\n' + json.dumps({
             "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -428,11 +469,14 @@ def hub_page(a, c):
     coverage = ('<h2>Service Area</h2><p>From ' + ar["name"] + ' we cover all of ' + ar["county"]
                 + ' including ' + ', '.join(ar["satellites"]) + '. Crews dispatch from our Tulare County shop — '
                 + ar["name"] + ' is ' + ar["drive"] + '.</p>')
+    intro_secs = _split_sections(c["hub_intro_html"]) or [c["hub_intro_html"]]
+    intro_head = "".join(intro_secs[:1])
+    intro_rest = "".join(intro_secs[1:])
     body = (
-        _band(c["hub_intro_html"], "bg-background")
+        _band('<h2>Our Services in ' + ar["name"] + '</h2><div class="grid md:grid-cols-2 gap-6">' + cards + '</div>', "bg-background")
         + '<div class="rwb-stripe"></div>'
         + _band(STAT_TILES, "bg-primary-container", dark=True)
-        + _band('<h2>Our Services in ' + ar["name"] + '</h2><div class="grid md:grid-cols-2 gap-6">' + cards + '</div>', "bg-background")
+        + _band(intro_head + intro_rest, "bg-background")
         + _band(photo + coverage, "bg-surface-variant")
     )
     tpl = bp.TEMPLATE.replace(_CONTENT_ANCHOR, '<!-- Content bands -->\n{body}')
