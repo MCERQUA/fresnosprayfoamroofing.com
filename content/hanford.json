@@ -1,0 +1,48 @@
+{
+  "area": "hanford",
+  "hub_title": "Spray Foam Roofing & Coatings in Hanford, CA | Allstate",
+  "hub_meta_desc": "Spray foam roofing, silicone coatings, flat roof repair & commercial insulation in Hanford and Kings County. Family-owned SPF pros. Call (559) 739-9519.",
+  "hub_h1": "Spray Foam Roofing & Coatings in <span class=\"text-secondary-fixed\">Hanford</span>, California",
+  "hub_subhead": "Family-owned spray foam roofing crews serving Hanford, Lemoore, Corcoran, and Avenal — 35 minutes west of our Tulare County shop via CA-198.",
+  "hub_intro_html": "<p>Hanford sits at the working center of Kings County — the county seat, the courthouse town, and the crossroads where Highway 198 meets Highway 43. It is also one of the hardest places in California to own a flat roof. Summer afternoons push air temperatures past 100&deg;F for weeks at a stretch, and the membrane or metal panel on top of a packing house can run 150&deg;F or hotter under direct San Joaquin Valley sun. Winter flips the script: tule fog settles over Kings County for days, holding moisture against every seam, fastener, and flashing on a low-slope roof. Add the wind-blown dust that drifts off surrounding row crops, dairies, and open ground, and you have a climate that grinds down conventional roofing from two directions at once — ultraviolet attack in summer, trapped condensation in winter, and abrasive grit all year long.</p><p>Allstate Spray Foam &amp; Roofing has spent more than twenty years building and restoring roofs in exactly this climate. We are a family-owned company, fully licensed (Lic #C-2-1052735), BBB accredited, and a member of the Spray Polyurethane Foam Alliance. Our crews dispatch from our Tulare County shop, about 35 minutes east of Hanford — a straight run west on CA-198 past Armona and into town. That proximity matters. We are not a marketing site reselling your project to whoever answers the phone; we are the crew in the rig, and Kings County is a routine part of our service footprint, not a stretch assignment.</p><p>The building stock around Hanford tells you why spray polyurethane foam and silicone coatings fit here so well. Kings County's economy runs on agriculture and everything that processes it: dairy operations, cheese and milk processing, tomato and vegetable packing, cotton gins down Highway 43 toward Corcoran, cold storage, and the distribution warehouses that move all of it. Those facilities are dominated by big, simple, low-slope and metal-panel roofs — thousands of squares of surface that either leak or don't, insulate or don't, and directly affect what it costs to keep product cold and crews comfortable. Closer to Courthouse Square and China Alley, Hanford's civic and institutional buildings — county offices, schools, clinics, churches — carry the same flat-roof burdens on older bones. And west of town, Lemoore's commercial corridor serves a steady population anchored by the naval air station; the private-sector shops, medical offices, and service businesses that community supports run on the same metal buildings and flat roofs as everyone else in the county.</p><p>Our four core services map directly onto that stock. <strong>Spray foam roofing</strong> installs a seamless, self-flashing SPF roof over your existing substrate — roughly R-6.5 per inch of insulation value baked into the waterproofing layer itself, which is a serious advantage when Title 24 energy math and PG&amp;E summer demand charges are both working against you. <strong>Silicone roof coating</strong> restores an aging foam, single-ply, built-up, or metal roof for $2&ndash;$4 per square foot instead of the cost of tear-off and replacement. <strong>Foam and flat roof repair</strong> handles the leaks, ponding, split seams, and storm damage that Kings County winters expose. And <strong>commercial spray foam insulation</strong> brings closed-cell performance to the metal shops, warehouses, and processing spaces where conditioned air currently pours through un-insulated steel skin.</p><p>Every project in Hanford starts the same way: a free assessment. We put a drone over the roof, take core samples where the story underneath needs verifying, and hand you a written bid within 48 hours. No pressure sequence, no mystery-meat pricing — a documented scope with numbers you can compare. New SPF systems typically run $4&ndash;$8 per square foot; recoats run $2&ndash;$4. Because SPF roofs renew on a 10&ndash;20 year recoat cycle rather than a tear-off cycle, the roof you install once can be the last roof the building ever needs — a maintenance line item instead of a recurring capital catastrophe.</p><p>We serve all of Kings County from Hanford outward: Lemoore and its commercial corridor along 198, Corcoran and its cotton and processing facilities down Highway 43, Avenal out toward the I-5 corridor, plus Armona, Home Garden, and the unincorporated ag operations in between. If your building is under a flat, low-slope, or metal roof anywhere in that radius, the sections below break down each service in Hanford-specific detail — or skip the reading, call (559) 739-9519, and get the drone in the air this week.</p>",
+  "service_teasers": {
+    "spray-foam-roofing": "Seamless SPF roofing for Hanford's packing houses, warehouses, metal buildings, and civic flat roofs — insulation and waterproofing in one monolithic layer, installed by crews 35 minutes away.",
+    "silicone-roof-coating": "Restore an aging flat or metal roof in Hanford for $2–$4 per square foot with 100% silicone — UV-proof, ponding-proof, and built for Kings County's 150°F roof decks.",
+    "foam-roof-repair": "Roof repair for Hanford's flat, foam, and low-slope roofs — leaks, ponding, split seams, and fog-season moisture problems diagnosed with drone survey and core sampling, bid in writing within 48 hours.",
+    "commercial-insulation": "Closed-cell spray foam insulation for Kings County metal buildings, warehouses, and processing facilities — cut cooling loads, stop condensation drip, and stiffen the building in one pass."
+  },
+  "services": {
+    "spray-foam-roofing": {
+      "title": "Spray Foam Roofing Hanford, CA | SPF Flat & Metal Roofs",
+      "meta_desc": "Spray foam roofing in Hanford, CA for packing houses, warehouses & metal buildings. R-6.5/inch, seamless SPF. Free drone assessment: (559) 739-9519.",
+      "h1": "Spray Foam Roofing in <span class=\"text-secondary-fixed\">Hanford</span>, California",
+      "subhead": "Seamless SPF roofing for Kings County's ag processors, distributors, metal buildings, and civic flat roofs — installed by a family-owned, licensed crew based 35 minutes east on CA-198.",
+      "body_html": "__SVC1__",
+      "faqs": "__FAQ1__"
+    },
+    "silicone-roof-coating": {
+      "title": "Silicone Roof Coating Hanford, CA | Flat & Metal Roofs",
+      "meta_desc": "Silicone roof coating in Hanford, CA — restore flat, foam & metal roofs for $2-$4/sq ft instead of replacing. Free drone assessment: (559) 739-9519.",
+      "h1": "Silicone Roof Coating in <span class=\"text-secondary-fixed\">Hanford</span>, California",
+      "subhead": "100% silicone restoration for Hanford's flat, foam, single-ply, and metal roofs — a fraction of replacement cost, engineered for 150°F roof surfaces and tule fog winters.",
+      "body_html": "__SVC2__",
+      "faqs": "__FAQ2__"
+    },
+    "foam-roof-repair": {
+      "title": "Roof Repair Hanford, CA | Foam & Flat Roof Pros | Allstate",
+      "meta_desc": "Roof repair in Hanford, CA — flat roof leaks, foam roof damage, ponding & seam failures fixed right. Written bid in 48 hours. Call (559) 739-9519.",
+      "h1": "Roof Repair in <span class=\"text-secondary-fixed\">Hanford</span>, California",
+      "subhead": "Flat, foam, and low-slope roof repair for Hanford and Kings County — leaks found with drone survey and core sampling, fixed with materials that match your roof, documented in a written bid within 48 hours.",
+      "body_html": "__SVC3__",
+      "faqs": "__FAQ3__"
+    },
+    "commercial-insulation": {
+      "title": "Commercial Spray Foam Insulation Hanford, CA | Allstate",
+      "meta_desc": "Commercial spray foam insulation in Hanford, CA — metal buildings, warehouses & cold storage. Closed-cell R-6.5/inch. Free assessment: (559) 739-9519.",
+      "h1": "Commercial Spray Foam Insulation in <span class=\"text-secondary-fixed\">Hanford</span>, California",
+      "subhead": "Closed-cell spray foam for Kings County's metal buildings, warehouses, shops, and processing facilities — real R-value on steel skin, condensation control in fog season, one installed layer.",
+      "body_html": "__SVC4__",
+      "faqs": "__FAQ4__"
+    }
+  }
+}
