@@ -9,12 +9,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, "site")
 BASE = "https://fresnosprayfoamroofing.com"
 
+import glob as _glob
 PAGES = ["index.html", "spray-polyurethane-foam-roofing.html", "foam-roof-repair-fresno.html",
          "commercial-roofing-fresno.html", "spray-foam-roofing-cost.html",
-         "spray-foam-roofing-visalia.html", "spray-foam-roofing-tulare.html",
-         "spray-foam-roofing-hanford.html", "spray-foam-roofing-merced.html",
-         "spray-foam-roofing-bakersfield.html", "how-long-does-spray-foam-roofing-last.html",
+         "how-long-does-spray-foam-roofing-last.html",
          "spray-foam-roofing-installation.html", "spray-foam-vs-tpo-roofing.html"]
+PAGES += sorted(os.path.relpath(p, SITE) for p in _glob.glob(os.path.join(SITE, "*", "*.html")))
 
 
 class Extract(HTMLParser):
@@ -59,7 +59,7 @@ for f in PAGES:
     ex = Extract()
     ex.feed(body)
     text = re.sub(r"\n{3,}", "\n\n", "".join(ex.out)).strip()
-    url = BASE + "/" + (f[:-5] if f != "index.html" else "")
+    url = BASE + "/" + (f[:-11] if f.endswith("/index.html") else (f[:-5] if f != "index.html" else ""))
     sections.append(f"URL: {url}\nTITLE: {title}\n\n{text}")
 
 open(os.path.join(SITE, "llms-full.txt"), "w").write(
