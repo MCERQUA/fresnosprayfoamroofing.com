@@ -4,3 +4,5 @@ pnpm-lock.yaml
 
 deploy_key
 deploy_key.pub
+__pycache__/
+*.pyc
