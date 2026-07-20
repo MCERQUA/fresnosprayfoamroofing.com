@@ -383,12 +383,27 @@ dict(slug="spray-foam-roofing-cost", hero_img="hero-aerial.jpg", area=[{"@type":
  schema_name="Spray Foam Roofing Cost Guide",
  h1='What Does Spray Foam Roofing <span class="text-secondary-fixed">Cost</span>?',
  subhead="An honest 2026 pricing guide for commercial building owners — what drives the number, how recoating changes the math, and why SPF usually wins on lifecycle cost.",
- faqs=[("How much does spray foam roofing cost in Fresno in 2026?",
+ faqs=[("What does spray foam roofing cost per square foot?",
+        "New commercial SPF systems typically run $4-$8 per square foot installed; recoating an existing foam roof runs $2-$4 per square foot. Roof size, foam thickness, and existing conditions move the number within those ranges.", None),
+       ("Is recoating really that much cheaper than replacing?",
+        "Yes — a recoat reuses the foam already on your roof and only renews the protective silicone layer, so there is no tear-off, no disposal, and far less material. That is why foam owners budget $2-$4 per square foot every 10-20 years instead of a full replacement.", None),
+       ("Do the energy savings actually offset the cost?",
+        "Meaningfully. SPF insulates at about R-6.5 per inch — the highest of any roof system — and the white silicone topcoat reflects most solar energy, which matters through a Central Valley summer. Owners routinely see cooling loads drop immediately after installation.", None),
+       ("How much does spray foam roofing cost in Fresno in 2026?",
         "New commercial SPF roof systems in the Fresno area typically run $4-$8 per square foot installed; recoating an existing foam roof typically runs $2-$4 per square foot. Every roof gets a firm written bid within 48 hours of a free assessment from Allstate Spray Foam Roofing (Lic #C-2-1052735).",
         'New commercial SPF roof systems in the Fresno area typically run <strong>$4–$8 per square foot</strong> installed; recoating an existing foam roof typically runs <strong>$2–$4 per square foot</strong>. Every roof gets a firm written bid within 48 hours of a free assessment from Allstate Spray Foam Roofing (Lic #C-2-1052735).')],
  body="""
 <h2>The Short Answer</h2>
 <p>For commercial buildings, a new spray polyurethane foam (SPF) roof system typically runs in the <strong>$4–$8 per square foot</strong> range installed, depending on the factors below. A <strong>silicone recoat</strong> of an existing foam roof — the renewal that keeps the system alive indefinitely — typically runs <strong>$2–$4 per square foot</strong>. Every roof is different; these ranges are for orientation, and your free assessment produces a firm written bid within 48 hours.</p>
+<h2>Three Budgets, Three Paths</h2>
+<p>Not every roof needs the full number. The honest starting point is which of these three you're actually in:</p>
+<table>
+<tr><th>Path</th><th>Typical Cost</th><th>When It Applies</th></tr>
+<tr><td>Spot repair</td><td>Hundreds to low thousands total</td><td>Isolated blisters, punctures, or ponding spots; coating mostly intact</td></tr>
+<tr><td>Full silicone recoat</td><td><strong>$2–$4 / sq ft</strong></td><td>Coating worn but foam solid — most foam roofs 10–20 years old</td></tr>
+<tr><td>New SPF roof system</td><td><strong>$4–$8 / sq ft</strong></td><td>First foam roof, or saturated sections that need rebuild</td></tr>
+</table>
+<!--CHART:LIFECYCLE-->
 <h2>What Drives the Price</h2>
 <table>
 <tr><th>Factor</th><th>Why It Matters</th></tr>

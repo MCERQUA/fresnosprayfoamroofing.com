@@ -232,6 +232,13 @@ def build():
             if w < 2800:
                 short += 1
                 print("  !! UNDER 2800 WORDS:", a, s, w)
+    # inject lifecycle chart into the flat cost money page (marker set in build-pages.py)
+    cost_path = os.path.join(SITE, "spray-foam-roofing-cost.html")
+    if os.path.exists(cost_path):
+        ch = open(cost_path).read()
+        if "<!--CHART:LIFECYCLE-->" in ch:
+            open(cost_path, "w").write(ch.replace("<!--CHART:LIFECYCLE-->", chart_lifecycle()))
+            print("injected lifecycle chart into cost page")
     rebuild_netlify()
     rebuild_sitemap()
     print(f"done: {total} service pages, {short} under length")
@@ -442,8 +449,11 @@ def svc_page(a, s, c):
 def hub_page(a, c):
     ar = AREAS[a]
     slug = f"{a}/"
+    ICONS = {"spray-foam-roofing": "roofing", "silicone-roof-coating": "format_paint",
+             "foam-roof-repair": "home_repair_service", "commercial-insulation": "layers"}
     cards = "\n".join(
         f'<div class="bg-surface-container-lowest industrial-card-border p-8 space-y-3">'
+        f'<span class="material-symbols-outlined text-secondary text-4xl">{ICONS[s]}</span>'
         f'<h3 class="font-headline-lg text-primary text-2xl uppercase">{SERVICES[s]["name"]}</h3>'
         f'<p class="text-on-surface-variant">{c["service_teasers"].get(s, "")}</p>'
         f'<a href="{("/foam-roof-repair-fresno" if (a, s) in SKIP else f"/{a}/{s}")}" class="font-label-caps text-secondary uppercase tracking-widest">'

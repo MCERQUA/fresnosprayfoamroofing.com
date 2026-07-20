@@ -205,6 +205,11 @@
   status = 301
   force = true
 [[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+[[redirects]]
   from = "/spray-foam-roofing-visalia"
   to = "/visalia/spray-foam-roofing"
   status = 301
