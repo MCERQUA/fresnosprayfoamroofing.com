@@ -112,10 +112,10 @@ swap('foam roofs over 30 years old routinely test like new underneath. Details o
      'foam roofs over 30 years old routinely test like new underneath. Full data in <a class="text-secondary underline" href="/how-long-does-spray-foam-roofing-last">our lifespan guide</a>.')
 
 # ---- 13. about imgs: attrs
-swap('<img class="w-full grayscale border-2 border-primary" alt="The Allstate Spray Foam Roofing crew in branded high-visibility gear in front of a company truck" src="/assets/crew.jpg"/>',
-     '<img class="w-full grayscale border-2 border-primary" alt="The Allstate Spray Foam Roofing crew in branded high-visibility gear in front of a company truck" src="/assets/crew.jpg" width="512" height="286" loading="lazy" decoding="async"/>')
-swap('<img class="w-full h-full object-cover grayscale" alt="Allstate service truck at a job site in the early days" src="/assets/truck.jpg"/>',
-     '<img class="w-full h-full object-cover grayscale" alt="Allstate service truck at a job site in the early days" src="/assets/truck.jpg" width="1280" height="720" loading="lazy" decoding="async"/>')
+swap('<img class="w-full border-2 border-primary" alt="Aerial view of a commercial roof coated white by Allstate, with a work truck beside the building" src="/assets/job-crew-real-v1.jpg"/>',
+     '<img class="w-full border-2 border-primary" alt="Aerial view of a commercial roof coated white by Allstate, with a work truck beside the building" src="/assets/job-crew-real-v1.jpg" width="512" height="286" loading="lazy" decoding="async"/>')
+swap('<img class="w-full h-full object-cover" alt="Aerial view of a long metal building roof coated white by Allstate" src="/assets/job-truck-real-v1.jpg"/>',
+     '<img class="w-full h-full object-cover" alt="Aerial view of a long metal building roof coated white by Allstate" src="/assets/job-truck-real-v1.jpg" width="1280" height="720" loading="lazy" decoding="async"/>')
 swap('<img class="w-full h-full object-cover" alt="Allstate\'s modern wrapped truck and trailer rig with American flag graphics" src="/assets/truck-trailer.jpg"/>',
      '<img class="w-full h-full object-cover" alt="Allstate\'s modern wrapped truck and trailer rig with American flag graphics" src="/assets/truck-trailer.jpg" width="1200" height="529" loading="lazy" decoding="async"/>')
 

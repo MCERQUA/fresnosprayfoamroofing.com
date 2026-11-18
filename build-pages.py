@@ -115,7 +115,7 @@ CONTACT_FAB = """<div class="hidden md:block fixed bottom-8 right-8 z-50 group">
 </button>
 </div>"""
 
-FORM_BLOCK = """<form name="roof-assessment" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="grid md:grid-cols-2 gap-6 text-left">
+FORM_BLOCK = """<form name="roof-assessment" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field" class="grid md:grid-cols-2 gap-6 text-left">
 <input type="hidden" name="form-name" value="roof-assessment"/>
 <p class="hidden"><label>Don't fill this out: <input name="bot-field"/></label></p>
 <div class="space-y-2">
@@ -463,7 +463,7 @@ dict(slug="spray-polyurethane-foam-roofing", hero_img="service-spf-roof.jpg", ar
 <p>SPF roofing is unforgiving of poor application — substrate prep, ambient conditions, pass thickness, and coating coverage all determine whether the system lasts 5 years or 50. Allstate Spray Foam Roofing has been spraying foam for over 20 years as SPFA-member applicators, fully licensed (Lic #C-2-1052735). See our <a class="text-secondary underline" href="/commercial-roofing-fresno">commercial roofing services in Fresno</a> or request a free assessment below.</p>
 """),
 
-dict(slug="commercial-roofing-fresno", hero_img="truck.jpg", area=[{"@type": "City", "name": "Fresno"}, {"@type": "City", "name": "Clovis"}, {"@type": "AdministrativeArea", "name": "Fresno County"}],
+dict(slug="commercial-roofing-fresno", hero_img="job-truck-real-v1.jpg", area=[{"@type": "City", "name": "Fresno"}, {"@type": "City", "name": "Clovis"}, {"@type": "AdministrativeArea", "name": "Fresno County"}],
  title="Commercial Roofing Fresno, CA | SPF & Coatings | Allstate",
  meta_desc="Commercial roofing contractor in Fresno, CA — spray foam roof systems and silicone restoration for warehouses, ag facilities and metal buildings. (559) 739-9519.",
  schema_name="Commercial Roofing Fresno",
